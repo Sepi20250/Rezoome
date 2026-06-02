@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sepi20250.github.io/Rezoome/sitemap.xml
