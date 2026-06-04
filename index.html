@@ -226,6 +226,22 @@
       <form id="commentForm" class="job">
         <strong>ثبت نظر شما</strong>
         <p>
+            <input
+              type="text"
+              name="name"
+              placeholder="نام شما"
+              required
+              style="
+                width: 100%;
+                padding: 10px;
+                border-radius: 8px;
+                border: 1px solid var(--gold);
+                background: var(--card);
+                color: var(--text);
+              "
+            />
+          </p>
+        <p>
           <label>امتیاز:</label><br>
           <label>⭐</label><input type="radio" name="rate" value="1"> 
           <label>⭐</label><input type="radio" name="rate" value="2"> 
@@ -268,7 +284,7 @@
 
       fetch(WEB_APP_URL, {
         method:'POST',
-        body: data
+        body: formData
       })
       .then(resp => {
         if(resp.ok){
