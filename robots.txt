@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://sepi20250.github.io/Rezoome/sitemap.xml
+Sitemap: https://sepehr-jafari.ir/sitemap.xml
