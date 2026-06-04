@@ -268,39 +268,37 @@
   </footer>
 
   <script>
-    function toggleTheme() {
-      document.body.classList.toggle('light');
-    }
+      function toggleTheme() {
+        document.body.classList.toggle("light");
+      }
 
-    const form = document.getElementById('commentForm');
-    const successMessage = document.getElementById('successMessage');
+      const form = document.getElementById("commentForm");
+      const successMessage = document.getElementById("successMessage");
 
-    const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxsrmtbGvJ7hUkXU_d-tNSjObV3Rjd9CH8JJLTgwZbZOoZhebL_M8txzV5xG2Ny3pK9/exec"; // جایگزین لینک Web App خودت کن
+      const WEB_APP_URL =
+        "https://script.google.com/macros/s/AKfycbxsrmtbGvJ7hUkXU_d-tNSjObV3Rjd9CH8JJLTgwZbZOoZhebL_M8txzV5xG2Ny3pK9/exec"; // جایگزین لینک Web App خودت کن
 
-    form.addEventListener('submit', e => {
-      e.preventDefault();
-      const formData = new FormData(form);
-      const data = new URLSearchParams(formData);
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const formData = new FormData(form);
+        const data = new URLSearchParams(formData);
 
-      fetch(WEB_APP_URL, {
-        method:'POST',
-        body: formData
-      })
-      .then(resp => {
-        if(resp.ok){
-          successMessage.style.display = 'block';
-          form.reset();
-          setTimeout(()=> successMessage.style.display='none', 3000);
-        } else {
-          alert("ارسال نظر با مشکل مواجه شد.");
-        }
-      })
-      .catch(err=>{
-        alert("ارسال نظر با مشکل مواجه شد.");
-        console.error(err);
+        fetch(WEB_APP_URL, {
+          method: "POST",
+          body: formData,
+        })
+          .then(() => {
+              successMessage.style.display = "block";
+              successMessage.textContent = "نظر شما با موفقیت ثبت شد✅";
+              form.reset();
+              setTimeout(() => {
+                successMessage.style.display = "none";},3000);
+          })
+          .catch(() => {
+            alert("ارسال نظر با مشکل مواجه شد.");
+          });
       });
-    });
-  </script>
+    </script>
 
 </body>
 </html>
